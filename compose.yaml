@@ -1,0 +1,14 @@
+name: studentportal
+
+services:
+  portal:
+    build: .
+    ports:
+      - "8080:8080"
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 256m
+    pids_limit: 128
